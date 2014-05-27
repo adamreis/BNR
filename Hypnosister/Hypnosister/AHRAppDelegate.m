@@ -5,6 +5,7 @@
 //  Created by Adam Reis on 5/26/14.
 //  Copyright (c) 2014 Adam Reis. All rights reserved.
 //
+//  Based on example code from the Big Nerd Ranch Guide to iOS programming
 
 #import "AHRAppDelegate.h"
 #import "AHRHypnosisView.h"
@@ -19,7 +20,7 @@
     CGRect firstFrame = self.window.bounds;
     
     AHRHypnosisView *firstView  = [[AHRHypnosisView alloc] initWithFrame:firstFrame];
-    firstView.backgroundColor = [UIColor redColor];
+//    firstView.backgroundColor = [UIColor redColor];
     [self.window addSubview:firstView];
     
     self.window.backgroundColor = [UIColor whiteColor];
