@@ -19,6 +19,7 @@
 		EDCA15AE1934402600C9034F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCA15961934402600C9034F /* UIKit.framework */; };
 		EDCA15B61934402600C9034F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDCA15B41934402600C9034F /* InfoPlist.strings */; };
 		EDCA15B81934402600C9034F /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCA15B71934402600C9034F /* HypnosisterTests.m */; };
+		EDCA15C6193445C100C9034F /* AHRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCA15C5193445C100C9034F /* AHRHypnosisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		EDCA15B31934402600C9034F /* HypnosisterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HypnosisterTests-Info.plist"; sourceTree = "<group>"; };
 		EDCA15B51934402600C9034F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDCA15B71934402600C9034F /* HypnosisterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisterTests.m; sourceTree = "<group>"; };
+		EDCA15C4193445C100C9034F /* AHRHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRHypnosisView.h; sourceTree = "<group>"; };
+		EDCA15C5193445C100C9034F /* AHRHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRHypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				EDCA15A21934402600C9034F /* AHRAppDelegate.m */,
 				EDCA15A41934402600C9034F /* Images.xcassets */,
 				EDCA15991934402600C9034F /* Supporting Files */,
+				EDCA15C4193445C100C9034F /* AHRHypnosisView.h */,
+				EDCA15C5193445C100C9034F /* AHRHypnosisView.m */,
 			);
 			path = Hypnosister;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			files = (
 				EDCA15A31934402600C9034F /* AHRAppDelegate.m in Sources */,
 				EDCA159F1934402600C9034F /* main.m in Sources */,
+				EDCA15C6193445C100C9034F /* AHRHypnosisView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +444,7 @@
 				EDCA15BD1934402600C9034F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDCA15BE1934402600C9034F /* Build configuration list for PBXNativeTarget "HypnosisterTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +453,7 @@
 				EDCA15C01934402600C9034F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
