@@ -57,7 +57,7 @@
                     startAngle:0
                       endAngle:M_PI * 2.0
                      clockwise:YES];
-        radius -= 20;
+        radius -= 14;
     }
     
 
