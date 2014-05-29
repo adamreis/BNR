@@ -12,8 +12,6 @@
 @interface AHRHypnosisView ()
 
 @property (nonatomic)  CGPoint spiralCenter;
-//@property (nonatomic) UIColor *currentColor;
-@property NSArray *backgroundColors;
 
 @end
 
@@ -31,9 +29,7 @@
         CGRect bounds = self.bounds;
         _spiralCenter.x = bounds.origin.x + bounds.size.width / 2.0;
         _spiralCenter.y = bounds.origin.y + bounds.size.height / 2.0;
-        self.backgroundColors = @[[UIColor whiteColor], [UIColor lightGrayColor], [UIColor blueColor], [UIColor greenColor], [UIColor redColor], [UIColor yellowColor], [UIColor brownColor], [UIColor magentaColor], [UIColor orangeColor], [UIColor purpleColor]];
-        NSUInteger randomIndex = arc4random() % [self.backgroundColors count];
-        self.backgroundColor = [self.backgroundColors objectAtIndex:randomIndex];
+        self.backgroundColor = [self randomColor];
     }
     return self;
 }
@@ -64,12 +60,24 @@
     [path stroke];
 }
 
+- (UIColor *)randomColor {
+    float red = (arc4random() % 100) / 100.0;
+    float green = (arc4random() % 100) / 100.0;
+    float blue = (arc4random() % 100) / 100.0;
+    
+    UIColor *randomColor = [UIColor colorWithRed:red
+                                           green:green
+                                            blue:blue
+                                           alpha:1.0];
+    return randomColor;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *myTouch = [[touches allObjects] objectAtIndex: 0];
     self.spiralCenter = [myTouch locationInView: self];
-    NSUInteger randomIndex = arc4random() % [self.backgroundColors count];
-    self.backgroundColor = [self.backgroundColors objectAtIndex:randomIndex];
+    
+    self.backgroundColor = [self randomColor];
 }
 
 - (void)setSpiralCenter:(CGPoint)spiralCenter
