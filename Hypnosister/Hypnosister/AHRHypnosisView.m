@@ -74,8 +74,8 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *myTouch = [[touches allObjects] objectAtIndex: 0];
-    self.spiralCenter = [myTouch locationInView: self];
+//    UITouch *myTouch = [[touches allObjects] objectAtIndex: 0];
+//    self.spiralCenter = [myTouch locationInView: self];
     
     self.backgroundColor = [self randomColor];
 }

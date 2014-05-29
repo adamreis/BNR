@@ -15,13 +15,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
-    CGRect firstFrame = self.window.bounds;
+    CGRect screenRect = self.window.bounds;
+    CGRect biggerRect = screenRect;
+    biggerRect.size.width *= 2;
+    biggerRect.size.height *= 2;
     
-    AHRHypnosisView *firstView  = [[AHRHypnosisView alloc] initWithFrame:firstFrame];
-//    firstView.backgroundColor = [UIColor redColor];
-    [self.window addSubview:firstView];
+    // Screen-sized scroll view
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    
+    AHRHypnosisView *hypnosisView  = [[AHRHypnosisView alloc] initWithFrame:biggerRect];
+
+    [scrollView addSubview:hypnosisView];
+    [self.window addSubview:scrollView];
+    scrollView.contentSize = biggerRect.size;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
