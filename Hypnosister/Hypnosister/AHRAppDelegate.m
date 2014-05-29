@@ -19,14 +19,16 @@
     CGRect screenRect = self.window.bounds;
     CGRect biggerRect = screenRect;
     biggerRect.size.width *= 2;
-    biggerRect.size.height *= 2;
     
     // Screen-sized scroll view
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
     
-    AHRHypnosisView *hypnosisView  = [[AHRHypnosisView alloc] initWithFrame:biggerRect];
+    AHRHypnosisView *firstHypnosisView  = [[AHRHypnosisView alloc] initWithFrame:screenRect];
+    screenRect.origin.x += screenRect.size.width;
+    AHRHypnosisView *secondtHypnosisView  = [[AHRHypnosisView alloc] initWithFrame:screenRect];
 
-    [scrollView addSubview:hypnosisView];
+    [scrollView addSubview:firstHypnosisView];
+    [scrollView addSubview:secondtHypnosisView];
     [self.window addSubview:scrollView];
     scrollView.contentSize = biggerRect.size;
     
