@@ -29,8 +29,10 @@
 
     [scrollView addSubview:firstHypnosisView];
     [scrollView addSubview:secondtHypnosisView];
-    [self.window addSubview:scrollView];
     scrollView.contentSize = biggerRect.size;
+    scrollView.pagingEnabled = YES;
+    [self.window addSubview:scrollView];
+
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
