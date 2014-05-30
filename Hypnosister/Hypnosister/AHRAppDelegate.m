@@ -34,7 +34,7 @@
     [self.window addSubview:scrollView];
 
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor grayColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
