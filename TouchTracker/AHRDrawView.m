@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSMutableDictionary *linesInProgress;
 @property (nonatomic, strong) NSMutableArray *finishedLines;
 
+@property (nonatomic, weak) AHRLine *selectedLine;
+
 @end
 
 @implementation AHRDrawView
@@ -26,6 +28,16 @@
         self.finishedLines = [[NSMutableArray alloc] init];
         self.backgroundColor = [UIColor grayColor];
         self.multipleTouchEnabled = YES;
+        
+        UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleTapRecognizer.numberOfTapsRequired = 2;
+        doubleTapRecognizer.delaysTouchesBegan = YES;
+        [self addGestureRecognizer:doubleTapRecognizer];
+        
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        tapRecognizer.delaysTouchesBegan = YES;
+        [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
+        [self addGestureRecognizer:tapRecognizer];
     }
     return self;
 }
@@ -82,6 +94,40 @@
     [self setNeedsDisplay];
 }
 
+- (void)tap:(UIGestureRecognizer *)gr
+{
+    CGPoint point = [gr locationInView:self];
+    self.selectedLine = [self lineAtPoint:point];
+    [self setNeedsDisplay];
+}
+
+- (void)doubleTap:(UIGestureRecognizer *)gr
+{
+    [self.linesInProgress removeAllObjects];
+    [self.finishedLines removeAllObjects];
+    [self setNeedsDisplay];
+}
+
+- (AHRLine *)lineAtPoint:(CGPoint)p
+{
+    for (AHRLine *l in self.finishedLines) {
+        CGPoint start = l.begin;
+        CGPoint end = l.end;
+        
+        // Just check a few points on the line to approximate distance
+        for (float t = 0.0; t <= 1.0; t += 0.05) {
+            float x = start.x + t * (end.x - start.x);
+            float y = start.y + t * (end.y - start.y);
+            
+            // Return anything within 20 points
+            if (hypot(x - p.x, y - p.y) < 15.0) {
+                return l;
+            }
+        }
+    }
+    return nil;
+}
+
 - (void)strokeLine:(AHRLine *)line
 {
     UIBezierPath *bp = [UIBezierPath bezierPath];
@@ -103,6 +149,11 @@
     [[UIColor purpleColor] set];
     for (NSValue *key in self.linesInProgress) {
         [self strokeLine:self.linesInProgress[key]];
+    }
+    
+    if (self.selectedLine) {
+        [[UIColor greenColor] set];
+        [self strokeLine:self.selectedLine];
     }
 }
 
