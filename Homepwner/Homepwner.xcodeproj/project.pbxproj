@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED3C10BB19395FF700121EF7 /* AHRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3C10B919395FF700121EF7 /* AHRDetailViewController.m */; };
+		ED3C10BC19395FF700121EF7 /* AHRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */; };
+		ED3C10BF19396D8E00121EF7 /* AHRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3C10BE19396D8E00121EF7 /* AHRImageStore.m */; };
 		ED7B75E3193933DA00C9EE4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7B75E2193933DA00C9EE4A /* Foundation.framework */; };
 		ED7B75E5193933DA00C9EE4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7B75E4193933DA00C9EE4A /* CoreGraphics.framework */; };
 		ED7B75E7193933DA00C9EE4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7B75E6193933DA00C9EE4A /* UIKit.framework */; };
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED3C10B819395FF700121EF7 /* AHRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRDetailViewController.h; sourceTree = "<group>"; };
+		ED3C10B919395FF700121EF7 /* AHRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRDetailViewController.m; sourceTree = "<group>"; };
+		ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AHRDetailViewController.xib; sourceTree = "<group>"; };
+		ED3C10BD19396D8E00121EF7 /* AHRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRImageStore.h; sourceTree = "<group>"; };
+		ED3C10BE19396D8E00121EF7 /* AHRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRImageStore.m; sourceTree = "<group>"; };
 		ED7B75DF193933DA00C9EE4A /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7B75E2193933DA00C9EE4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ED7B75E4193933DA00C9EE4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +134,11 @@
 				ED7B75E9193933DA00C9EE4A /* Supporting Files */,
 				ED7B76111939342B00C9EE4A /* AHRItemsViewController.h */,
 				ED7B76121939342B00C9EE4A /* AHRItemsViewController.m */,
+				ED3C10B819395FF700121EF7 /* AHRDetailViewController.h */,
+				ED3C10BD19396D8E00121EF7 /* AHRImageStore.h */,
+				ED3C10BE19396D8E00121EF7 /* AHRImageStore.m */,
+				ED3C10B919395FF700121EF7 /* AHRDetailViewController.m */,
+				ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -236,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7B75ED193933DA00C9EE4A /* InfoPlist.strings in Resources */,
+				ED3C10BC19395FF700121EF7 /* AHRDetailViewController.xib in Resources */,
 				ED7B75F5193933DA00C9EE4A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,9 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3C10BF19396D8E00121EF7 /* AHRImageStore.m in Sources */,
 				ED7B76131939342B00C9EE4A /* AHRItemsViewController.m in Sources */,
 				ED7B75F3193933DA00C9EE4A /* AHRAppDelegate.m in Sources */,
 				ED7B76191939361200C9EE4A /* BNRItem.m in Sources */,
+				ED3C10BB19395FF700121EF7 /* AHRDetailViewController.m in Sources */,
 				ED7B761C1939369100C9EE4A /* AHRItemStore.m in Sources */,
 				ED7B75EF193933DA00C9EE4A /* main.m in Sources */,
 			);
@@ -456,6 +472,7 @@
 				ED7B760D193933DA00C9EE4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED7B760E193933DA00C9EE4A /* Build configuration list for PBXNativeTarget "HomepwnerTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +481,7 @@
 				ED7B7610193933DA00C9EE4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
