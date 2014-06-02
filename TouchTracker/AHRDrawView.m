@@ -119,8 +119,8 @@
             float x = start.x + t * (end.x - start.x);
             float y = start.y + t * (end.y - start.y);
             
-            // Return anything within 20 points
-            if (hypot(x - p.x, y - p.y) < 15.0) {
+            // Return anything within 5 points
+            if (hypot(x - p.x, y - p.y) < 5.0) {
                 return l;
             }
         }

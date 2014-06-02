@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D5976BC0-3C7E-4795-B20B-4DC341BF3F5B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TouchTracker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5BD9780D-2256-45C3-B60B-72B497D1060C</key>
+		<string>ssh://github.com/adamreis/BNR.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TouchTracker/TouchTracker.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5BD9780D-2256-45C3-B60B-72B497D1060C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/adamreis/BNR.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5BD9780D-2256-45C3-B60B-72B497D1060C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5BD9780D-2256-45C3-B60B-72B497D1060C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BNR</string>
+		</dict>
+	</array>
+</dict>
+</plist>
