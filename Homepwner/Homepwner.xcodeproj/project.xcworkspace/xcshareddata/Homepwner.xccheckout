@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D5976BC0-3C7E-4795-B20B-4DC341BF3F5B</string>
+	<string>8B0D061A-7433-4F94-BDB8-22A99E0AFD9A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>TouchTracker</string>
+	<string>Homepwner</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5BD9780D-2256-45C3-B60B-72B497D1060C</key>
 		<string>ssh://github.com/adamreis/BNR.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TouchTracker/TouchTracker.xcodeproj/project.xcworkspace</string>
+	<string>Homepwner/Homepwner.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5BD9780D-2256-45C3-B60B-72B497D1060C</key>
