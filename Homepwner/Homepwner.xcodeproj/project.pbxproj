@@ -134,9 +134,9 @@
 				ED7B75E9193933DA00C9EE4A /* Supporting Files */,
 				ED7B76111939342B00C9EE4A /* AHRItemsViewController.h */,
 				ED7B76121939342B00C9EE4A /* AHRItemsViewController.m */,
-				ED3C10B819395FF700121EF7 /* AHRDetailViewController.h */,
 				ED3C10BD19396D8E00121EF7 /* AHRImageStore.h */,
 				ED3C10BE19396D8E00121EF7 /* AHRImageStore.m */,
+				ED3C10B819395FF700121EF7 /* AHRDetailViewController.h */,
 				ED3C10B919395FF700121EF7 /* AHRDetailViewController.m */,
 				ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */,
 			);

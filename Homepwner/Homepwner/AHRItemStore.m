@@ -58,14 +58,15 @@
     BNRItem *item = [BNRItem randomItem];
 
     [self.privateItems addObject:item];
-    
+    NSLog(@"Added item: %@", item);
+    NSLog(@"All items: %@", [self allItems]);
     return item;
 }
 
 - (void)removeItem:(BNRItem *)item
 {
     [[AHRImageStore sharedStore] deleteImageForKey:item.itemKey];
-    
+    NSLog(@"Removed item: %@", item);
     [self.privateItems removeObjectIdenticalTo:item];
 }
 

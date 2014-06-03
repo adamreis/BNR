@@ -72,11 +72,19 @@
 - (IBAction)addNewItem:(id)sender {
     BNRItem *newItem = [[AHRItemStore sharedStore] createItem];
     
-    NSInteger lastRow = [[[AHRItemStore sharedStore] allItems] indexOfObject:newItem];
+//    NSInteger lastRow = [[[AHRItemStore sharedStore] allItems] indexOfObject:newItem];
+//    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+//    
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    AHRDetailViewController *detailViewController = [[AHRDetailViewController alloc] initForNewItem:YES];
     
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    detailViewController.item = newItem;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 
@@ -127,7 +135,7 @@
         return;
     }
     
-    AHRDetailViewController *detailVC = [[AHRDetailViewController alloc] init];
+    AHRDetailViewController *detailVC = [[AHRDetailViewController alloc] initForNewItem:NO];
     
     BNRItem *selectedItem = items[indexPath.row];
     
