@@ -13,10 +13,10 @@
 + (instancetype)randomItem
 {
     // Create an immutable array of three adjectives
-    NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny"];
+    NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny", @"Moist", @"Squishy", @"Bent"];
 
     // Create an immutable array of three nouns
-    NSArray *randomNounList = @[@"Bear", @"Spork", @"Mac"];
+    NSArray *randomNounList = @[@"Bear", @"Spork", @"Mac", @"Doge", @"Arrow", @"Speaker", @"Mic"];
 
     // Get the index of a random adjective/noun from the lists
     // Note: The % operator, called the modulo operator, gives

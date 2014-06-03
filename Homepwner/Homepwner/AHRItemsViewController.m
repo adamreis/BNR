@@ -57,7 +57,7 @@
     NSArray *items = [[AHRItemStore sharedStore] allItems];
     
     if (indexPath.row == [items count]) {
-        cell.textLabel.text = @"No more items!";
+        cell.textLabel.text = @"-------------";
         return cell;
     }
     
