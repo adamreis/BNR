@@ -11,4 +11,6 @@
 
 @interface AHRHypnosisView : UIView
 
+@property (nonatomic)  CGPoint spiralCenter;
+
 @end

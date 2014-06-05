@@ -10,6 +10,10 @@
 #import "AHRHypnosisView.h"
 
 @interface AHRHypnosisViewController () <UITextFieldDelegate>
+
+@property (nonatomic, weak) UITextField *textField;
+@property (nonatomic, strong) AHRHypnosisView *hypnoView;
+
 @end
 
 @implementation AHRHypnosisViewController
@@ -17,9 +21,9 @@
 - (void)loadView
 {
     CGRect frame = [UIScreen mainScreen].bounds;
-    AHRHypnosisView *backgroundView = [[AHRHypnosisView alloc] initWithFrame:frame];
+    self.hypnoView = [[AHRHypnosisView alloc] initWithFrame:frame];
     
-    CGRect textFieldRect = CGRectMake(40,70,240,30);
+    CGRect textFieldRect = CGRectMake(40,-50,240,30);
     UITextField *textField = [[UITextField alloc] initWithFrame:textFieldRect];
     
     textField.borderStyle = UITextBorderStyleRoundedRect;
@@ -28,8 +32,26 @@
 
     textField.delegate = self;
     
-    [backgroundView addSubview:textField];
-    self.view = backgroundView;
+    [self.hypnoView addSubview:textField];
+    self.textField = textField;
+    self.view = self.hypnoView;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:2.0
+                          delay:0.0
+         usingSpringWithDamping:0.25
+          initialSpringVelocity:0.0
+                        options:0
+                     animations:^{
+                         CGRect frame = CGRectMake(40, 40, 240, 30);
+                         self.textField.frame = frame;
+                     } completion:^(BOOL finished) {
+                         NSLog(@"Animation Finished");
+                     }];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -67,19 +89,37 @@
         // Resize label to fit text
         [messageLabel sizeToFit];
         
-        // Get random coordinate
-        int width = (int)(self.view.bounds.size.width - messageLabel.bounds.size.width);
-        int x = arc4random()%width;
+        int width = (int)self.view.bounds.size.width;
+        int height = (int)self.view.bounds.size.height;
+
         
-        int height = (int)(self.view.bounds.size.height - messageLabel.bounds.size.height);
-        int y = arc4random()%height;
-        
-        // Update frame accordingly
         CGRect frame = messageLabel.frame;
-        frame.origin = CGPointMake(x, y);
-        messageLabel.frame = frame;
+        CGPoint center = self.hypnoView.spiralCenter;
         
+        frame.origin = CGPointMake(center.x - frame.size.width / 2.0, center.y -frame.size.height / 2.0);
+        messageLabel.frame = frame;
         [self.view insertSubview:messageLabel atIndex:0];
+
+        messageLabel.alpha = 0.0;
+        
+        [UIView animateWithDuration:0.05
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations: ^{
+             messageLabel.alpha = 1.0;
+         } completion:NULL];
+
+        
+        [UIView animateWithDuration:1.0
+                              delay:0.0
+             usingSpringWithDamping:0.45
+              initialSpringVelocity:0.2
+                            options:0
+                         animations:^{
+                                int x = arc4random() % width;
+                                int y = arc4random() % height;
+                                messageLabel.center = CGPointMake(x, y);
+                         }completion:NULL];
         
         UIInterpolatingMotionEffect *motionEffect;
         motionEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
