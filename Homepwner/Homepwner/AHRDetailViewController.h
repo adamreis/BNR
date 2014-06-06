@@ -15,5 +15,6 @@
 - (instancetype)initForNewItem:(BOOL)isNew;
 
 @property (strong, nonatomic) BNRItem *item;
+@property (nonatomic, copy) void (^dismissBlock)(void);
 
 @end

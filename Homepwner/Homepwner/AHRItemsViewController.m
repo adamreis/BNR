@@ -23,7 +23,9 @@
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                   target:self
+                                                                                   action:@selector(addNewItem:)];
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
         self.navigationItem.rightBarButtonItem = addButton;
         self.navigationItem.title = @"Homepwner";
@@ -46,7 +48,14 @@
 {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:@"UITableViewCell"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 
@@ -72,17 +81,17 @@
 - (IBAction)addNewItem:(id)sender {
     BNRItem *newItem = [[AHRItemStore sharedStore] createItem];
     
-//    NSInteger lastRow = [[[AHRItemStore sharedStore] allItems] indexOfObject:newItem];
-//    
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
-//    
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
-    
     AHRDetailViewController *detailViewController = [[AHRDetailViewController alloc] initForNewItem:YES];
     
     detailViewController.item = newItem;
     
+    detailViewController.dismissBlock = ^{
+        [self.tableView reloadData];
+    };
+    
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    
+    navController.modalPresentationStyle = UIModalPresentationFormSheet;
     
     [self presentViewController:navController animated:YES completion:nil];
 }
