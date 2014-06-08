@@ -220,4 +220,17 @@
     [self prepareViewsForOrientation:toInterfaceOrientation];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.view endEditing:YES];
+    
+    BNRItem* item = self.item;
+    item.itemName = self.nameField.text;
+    item.serialNumber = self.serialNumberField.text;
+    item.valueInDollars = [self.valueField.text intValue];
+    
+}
+
 @end
