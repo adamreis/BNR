@@ -25,6 +25,8 @@
 		ED7B76131939342B00C9EE4A /* AHRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7B76121939342B00C9EE4A /* AHRItemsViewController.m */; };
 		ED7B76191939361200C9EE4A /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7B76181939361200C9EE4A /* BNRItem.m */; };
 		ED7B761C1939369100C9EE4A /* AHRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7B761B1939369100C9EE4A /* AHRItemStore.m */; };
+		EDB4EACA193E7E020008256E /* AHRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB4EAC9193E7E020008256E /* AHRItemCell.m */; };
+		EDB4EACC193E7E390008256E /* AHRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB4EACB193E7E390008256E /* AHRItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		ED7B76181939361200C9EE4A /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		ED7B761A1939369100C9EE4A /* AHRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRItemStore.h; sourceTree = "<group>"; };
 		ED7B761B1939369100C9EE4A /* AHRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRItemStore.m; sourceTree = "<group>"; };
+		EDB4EAC8193E7E020008256E /* AHRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRItemCell.h; sourceTree = "<group>"; };
+		EDB4EAC9193E7E020008256E /* AHRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRItemCell.m; sourceTree = "<group>"; };
+		EDB4EACB193E7E390008256E /* AHRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AHRItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,9 @@
 				ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */,
 				ED7B75F4193933DA00C9EE4A /* Images.xcassets */,
 				ED7B75E9193933DA00C9EE4A /* Supporting Files */,
+				EDB4EAC8193E7E020008256E /* AHRItemCell.h */,
+				EDB4EAC9193E7E020008256E /* AHRItemCell.m */,
+				EDB4EACB193E7E390008256E /* AHRItemCell.xib */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 			files = (
 				ED7B75ED193933DA00C9EE4A /* InfoPlist.strings in Resources */,
 				ED3C10BC19395FF700121EF7 /* AHRDetailViewController.xib in Resources */,
+				EDB4EACC193E7E390008256E /* AHRItemCell.xib in Resources */,
 				ED7B75F5193933DA00C9EE4A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +280,7 @@
 			files = (
 				ED3C10BF19396D8E00121EF7 /* AHRImageStore.m in Sources */,
 				ED7B76131939342B00C9EE4A /* AHRItemsViewController.m in Sources */,
+				EDB4EACA193E7E020008256E /* AHRItemCell.m in Sources */,
 				ED7B75F3193933DA00C9EE4A /* AHRAppDelegate.m in Sources */,
 				ED7B76191939361200C9EE4A /* BNRItem.m in Sources */,
 				ED3C10BB19395FF700121EF7 /* AHRDetailViewController.m in Sources */,

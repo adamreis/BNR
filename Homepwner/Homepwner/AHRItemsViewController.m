@@ -10,6 +10,7 @@
 #import "AHRItemStore.h"
 #import "BNRItem.h"
 #import "AHRDetailViewController.h"
+#import "AHRItemCell.h"
 
 @interface AHRItemsViewController ()
 
@@ -48,8 +49,10 @@
 {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"UITableViewCell"];
+    UINib *nib = [UINib nibWithNibName:@"AHRItemCell" bundle:nil];
+    
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:@"AHRItemCell"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -61,7 +64,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    AHRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AHRItemCell" forIndexPath:indexPath];
     
     NSArray *items = [[AHRItemStore sharedStore] allItems];
     
@@ -72,7 +75,9 @@
     
     BNRItem *item = items[indexPath.row];
 
-    cell.textLabel.text = [item description];
+    cell.nameLabel.text = item.itemName;
+    cell.serialNumberLabel.text = item.serialNumber;
+    cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
 
     return cell;
 }
