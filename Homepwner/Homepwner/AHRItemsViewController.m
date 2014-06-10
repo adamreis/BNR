@@ -42,7 +42,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[[AHRItemStore sharedStore] allItems] count] + 1;
+    return [[[AHRItemStore sharedStore] allItems] count];
 }
 
 - (void)viewDidLoad
@@ -64,20 +64,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AHRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AHRItemCell" forIndexPath:indexPath];
-    
     NSArray *items = [[AHRItemStore sharedStore] allItems];
     
-    if (indexPath.row == [items count]) {
-        cell.textLabel.text = @"-------------";
-        return cell;
-    }
+    AHRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AHRItemCell" forIndexPath:indexPath];
     
     BNRItem *item = items[indexPath.row];
 
     cell.nameLabel.text = item.itemName;
     cell.serialNumberLabel.text = item.serialNumber;
     cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+    
+    cell.thumbnailView.image = item.thumbnail;
 
     return cell;
 }
@@ -92,6 +89,7 @@
     
     detailViewController.dismissBlock = ^{
         [self.tableView reloadData];
+        NSLog(@"Reloaded tableView data");
     };
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
@@ -113,31 +111,9 @@
     }
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
-{
-    NSInteger numItems = [[[AHRItemStore sharedStore] allItems] count];
-    
-    if (proposedDestinationIndexPath.row == numItems) {
-        return [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row - 1 inSection:sourceIndexPath.section];
-    }
-    
-    return proposedDestinationIndexPath;
-}
-
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [[AHRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row toIndex:destinationIndexPath.row];
-}
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger numItems = [[[AHRItemStore sharedStore] allItems] count];
-    
-    if (indexPath.row == numItems) {
-        return NO;
-    }
-    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

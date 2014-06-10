@@ -15,15 +15,18 @@
 @property (nonatomic) int valueInDollars;
 @property (nonatomic, readonly, strong) NSDate *dateCreated;
 @property (nonatomic, copy) NSString *itemKey;
+@property (nonatomic, strong) UIImage *thumbnail;
+
+- (void)setThumbnailFromImage:(UIImage *)image;
 
 
-+ (instancetype)randomItem;
+//+ (instancetype)randomItem;
 
 // Designated initializer for BNRItem
-- (instancetype)initWithItemName:(NSString *)name
-                  valueInDollars:(int)value
-                    serialNumber:(NSString *)sNumber;
-
-- (instancetype)initWithItemName:(NSString *)name;
+//- (instancetype)initWithItemName:(NSString *)name
+//                  valueInDollars:(int)value
+//                    serialNumber:(NSString *)sNumber;
+//
+//- (instancetype)initWithItemName:(NSString *)name;
 
 @end

@@ -10,43 +10,43 @@
 
 @implementation BNRItem
 
-+ (instancetype)randomItem
-{
-    // Create an immutable array of three adjectives
-    NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny", @"Moist", @"Squishy", @"Bent"];
-
-    // Create an immutable array of three nouns
-    NSArray *randomNounList = @[@"Bear", @"Spork", @"Mac", @"Doge", @"Arrow", @"Speaker", @"Mic"];
-
-    // Get the index of a random adjective/noun from the lists
-    // Note: The % operator, called the modulo operator, gives
-    // you the remainder. So adjectiveIndex is a random number
-    // from 0 to 2 inclusive.
-    NSInteger adjectiveIndex = arc4random() % [randomAdjectiveList count];
-    NSInteger nounIndex = arc4random() % [randomNounList count];
-
-    // Note that NSInteger is not an object, but a type definition
-    // for "long"
-
-    NSString *randomName = [NSString stringWithFormat:@"%@ %@",
-                            randomAdjectiveList[adjectiveIndex],
-                            randomNounList[nounIndex]];
-
-    int randomValue = arc4random() % 100;
-
-    NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
-                                    '0' + arc4random() % 10,
-                                    'A' + arc4random() % 26,
-                                    '0' + arc4random() % 10,
-                                    'A' + arc4random() % 26,
-                                    '0' + arc4random() % 10];
-
-    BNRItem *newItem = [[self alloc] initWithItemName:randomName
-                                       valueInDollars:randomValue
-                                         serialNumber:randomSerialNumber];
-
-    return newItem;
-}
+//+ (instancetype)randomItem
+//{
+//    // Create an immutable array of three adjectives
+//    NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny", @"Moist", @"Squishy", @"Bent"];
+//
+//    // Create an immutable array of three nouns
+//    NSArray *randomNounList = @[@"Bear", @"Spork", @"Mac", @"Doge", @"Arrow", @"Speaker", @"Mic"];
+//
+//    // Get the index of a random adjective/noun from the lists
+//    // Note: The % operator, called the modulo operator, gives
+//    // you the remainder. So adjectiveIndex is a random number
+//    // from 0 to 2 inclusive.
+//    NSInteger adjectiveIndex = arc4random() % [randomAdjectiveList count];
+//    NSInteger nounIndex = arc4random() % [randomNounList count];
+//
+//    // Note that NSInteger is not an object, but a type definition
+//    // for "long"
+//
+//    NSString *randomName = [NSString stringWithFormat:@"%@ %@",
+//                            randomAdjectiveList[adjectiveIndex],
+//                            randomNounList[nounIndex]];
+//
+//    int randomValue = arc4random() % 100;
+//
+//    NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
+//                                    '0' + arc4random() % 10,
+//                                    'A' + arc4random() % 26,
+//                                    '0' + arc4random() % 10,
+//                                    'A' + arc4random() % 26,
+//                                    '0' + arc4random() % 10];
+//
+//    BNRItem *newItem = [[self alloc] initWithItemName:randomName
+//                                       valueInDollars:randomValue
+//                                         serialNumber:randomSerialNumber];
+//
+//    return newItem;
+//}
 
 - (instancetype)initWithItemName:(NSString *)name
                   valueInDollars:(int)value
@@ -91,6 +91,7 @@
     [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
     [aCoder encodeObject:self.dateCreated forKey:@"dateCreated"];
     [aCoder encodeObject:self.itemKey forKey:@"itemKey"];
+    [aCoder encodeObject:self.thumbnail forKey:@"thumbnail"];
     
     [aCoder encodeInt:self.valueInDollars forKey:@"valueInDollars"];
 }
@@ -103,6 +104,7 @@
         _serialNumber = [aDecoder decodeObjectForKey:@"serialNumber"];
         _dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
         _itemKey = [aDecoder decodeObjectForKey:@"itemKey"];
+        _thumbnail = [aDecoder decodeObjectForKey:@"thumbnail"];
         
         _valueInDollars = [aDecoder decodeIntForKey:@"valueInDollars"];
     }
@@ -118,6 +120,42 @@
          self.valueInDollars,
          self.dateCreated];
     return descriptionString;
+}
+
+- (void)setThumbnailFromImage:(UIImage *)image
+{
+    CGSize origImageSize = image.size;
+    
+    CGRect newRect = CGRectMake(0, 0, 40, 40);
+    
+    float ratio = MAX(newRect.size.width / origImageSize.width,
+                      newRect.size.height / origImageSize.height);
+    
+    // Create a transparent bitmap context with a scaling factor equal to that of the screen
+    UIGraphicsBeginImageContextWithOptions(newRect.size, NO, 0.0);
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:newRect cornerRadius:5.0];
+    
+    // Make all subsequent drawings clip to this rounded rectangle
+    [path addClip];
+    
+    // Center the image in the thumbnail rectangle
+    CGRect projectRect;
+    projectRect.size.width = ratio * origImageSize.width;
+    projectRect.size.height = ratio * origImageSize.height;
+    projectRect.origin.x = (newRect.size.width - projectRect.size.width) / 2.0;
+    projectRect.origin.y = (newRect.size.height - projectRect.size.height) / 2.0;
+    
+    // Draw the image on it
+    [image drawInRect:projectRect];
+    
+    // Get the image from the image context; keep it as our thumbnail
+    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
+    self.thumbnail = smallImage;
+    
+    // Cleanup image context resources
+    UIGraphicsEndImageContext();
+    
 }
 
 @end
