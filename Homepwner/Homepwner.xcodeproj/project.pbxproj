@@ -27,6 +27,7 @@
 		ED7B761C1939369100C9EE4A /* AHRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7B761B1939369100C9EE4A /* AHRItemStore.m */; };
 		EDB4EACA193E7E020008256E /* AHRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB4EAC9193E7E020008256E /* AHRItemCell.m */; };
 		EDB4EACC193E7E390008256E /* AHRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB4EACB193E7E390008256E /* AHRItemCell.xib */; };
+		EDB4EACF193E8D1A0008256E /* AHRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB4EACE193E8D1A0008256E /* AHRImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		EDB4EAC8193E7E020008256E /* AHRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRItemCell.h; sourceTree = "<group>"; };
 		EDB4EAC9193E7E020008256E /* AHRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRItemCell.m; sourceTree = "<group>"; };
 		EDB4EACB193E7E390008256E /* AHRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AHRItemCell.xib; sourceTree = "<group>"; };
+		EDB4EACD193E8D1A0008256E /* AHRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRImageViewController.h; sourceTree = "<group>"; };
+		EDB4EACE193E8D1A0008256E /* AHRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				EDB4EAC8193E7E020008256E /* AHRItemCell.h */,
 				EDB4EAC9193E7E020008256E /* AHRItemCell.m */,
 				EDB4EACB193E7E390008256E /* AHRItemCell.xib */,
+				EDB4EACD193E8D1A0008256E /* AHRImageViewController.h */,
+				EDB4EACE193E8D1A0008256E /* AHRImageViewController.m */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				EDB4EACA193E7E020008256E /* AHRItemCell.m in Sources */,
 				ED7B75F3193933DA00C9EE4A /* AHRAppDelegate.m in Sources */,
 				ED7B76191939361200C9EE4A /* BNRItem.m in Sources */,
+				EDB4EACF193E8D1A0008256E /* AHRImageViewController.m in Sources */,
 				ED3C10BB19395FF700121EF7 /* AHRDetailViewController.m in Sources */,
 				ED7B761C1939369100C9EE4A /* AHRItemStore.m in Sources */,
 				ED7B75EF193933DA00C9EE4A /* main.m in Sources */,

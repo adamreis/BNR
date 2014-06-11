@@ -11,10 +11,13 @@
 #import "BNRItem.h"
 #import "AHRDetailViewController.h"
 #import "AHRItemCell.h"
+#import "AHRImageStore.h"
+#import "AHRImageViewController.h"
 
-@interface AHRItemsViewController ()
+@interface AHRItemsViewController () <UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) UIPopoverController *imagePopover;
 
 @end
 
@@ -76,9 +79,45 @@
     
     cell.thumbnailView.image = item.thumbnail;
 
+    __weak AHRItemCell *weakCell = cell;
+    
+    cell.actionBlock = ^{
+        NSLog(@"Going to show image for %@", item);
+        
+        AHRItemCell *strongCell = weakCell;
+        
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+            
+            UIImage *img = [[AHRImageStore sharedStore] imageForKey:item.itemKey];
+            if (!img) {
+                return;
+            }
+            
+            // Make a rectangle for the crame of the thumbnail relative to our table view
+            CGRect rect = [self.view convertRect:strongCell.thumbnailView.bounds
+                                        fromView:strongCell.thumbnailView];
+            
+            AHRImageViewController *ivc = [[AHRImageViewController alloc] init];
+            ivc.image = img;
+            
+            self.imagePopover = [[UIPopoverController alloc] initWithContentViewController:ivc];
+            self.imagePopover.delegate = self;
+            self.imagePopover.popoverContentSize = CGSizeMake(600, 600);
+            [self.imagePopover presentPopoverFromRect:rect
+                                               inView:self.view
+                             permittedArrowDirections:UIPopoverArrowDirectionAny
+                                             animated:YES];
+        }
+        
+    };
+    
     return cell;
 }
 
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.imagePopover = nil;
+}
 
 - (IBAction)addNewItem:(id)sender {
     BNRItem *newItem = [[AHRItemStore sharedStore] createItem];

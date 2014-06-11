@@ -48,20 +48,34 @@
                             <constraint firstAttribute="height" constant="40" id="s4C-qn-EVN"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P27-ES-Qfm">
+                        <rect key="frame" x="2" y="2" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="showImage:" destination="SEM-dL-pJe" eventType="touchUpInside" id="kBV-xl-e9K"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="ADa-37-cs3" secondAttribute="centerY" id="1ON-CM-50o"/>
                     <constraint firstAttribute="trailing" secondItem="ADa-37-cs3" secondAttribute="trailing" constant="20" id="2Na-XV-OlC"/>
                     <constraint firstItem="ADa-37-cs3" firstAttribute="leading" secondItem="CVy-Iy-e8D" secondAttribute="trailing" constant="17" id="2hq-Z9-oQF"/>
                     <constraint firstItem="CVy-Iy-e8D" firstAttribute="top" secondItem="JBm-eU-iGL" secondAttribute="top" constant="2" id="3ll-nG-Am2"/>
+                    <constraint firstItem="uce-Xp-xYj" firstAttribute="bottom" secondItem="P27-ES-Qfm" secondAttribute="bottom" id="D4A-XT-t53"/>
                     <constraint firstAttribute="bottom" secondItem="bvh-4m-0zk" secondAttribute="bottom" id="GuN-if-5wU"/>
                     <constraint firstItem="bvh-4m-0zk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CVy-Iy-e8D" secondAttribute="bottom" constant="5" id="HER-gc-4h7"/>
                     <constraint firstItem="CVy-Iy-e8D" firstAttribute="leading" secondItem="uce-Xp-xYj" secondAttribute="trailing" constant="5" id="JiD-We-Lae"/>
+                    <constraint firstItem="uce-Xp-xYj" firstAttribute="trailing" secondItem="P27-ES-Qfm" secondAttribute="trailing" id="SCL-PE-Ir1"/>
+                    <constraint firstItem="uce-Xp-xYj" firstAttribute="leading" secondItem="P27-ES-Qfm" secondAttribute="leading" id="YLS-NN-B1u"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CVy-Iy-e8D" secondAttribute="bottom" constant="20" id="YjG-6j-Te4"/>
                     <constraint firstItem="uce-Xp-xYj" firstAttribute="leading" secondItem="JBm-eU-iGL" secondAttribute="leading" constant="2" id="bTr-cy-S7z"/>
                     <constraint firstAttribute="centerY" secondItem="uce-Xp-xYj" secondAttribute="centerY" id="iwb-2H-oyQ"/>
                     <constraint firstItem="ADa-37-cs3" firstAttribute="leading" secondItem="bvh-4m-0zk" secondAttribute="trailing" constant="17" id="kzQ-Ua-lyl"/>
                     <constraint firstItem="bvh-4m-0zk" firstAttribute="leading" secondItem="uce-Xp-xYj" secondAttribute="trailing" constant="5" id="usV-fX-0Yh"/>
+                    <constraint firstItem="uce-Xp-xYj" firstAttribute="top" secondItem="P27-ES-Qfm" secondAttribute="top" id="vsF-k4-UO0"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
