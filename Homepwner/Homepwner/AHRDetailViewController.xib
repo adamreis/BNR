@@ -10,9 +10,12 @@
                 <outlet property="cameraButton" destination="lBn-Hc-x8h" id="wgq-zg-DPm"/>
                 <outlet property="dateLabel" destination="BOw-fW-a8H" id="NsE-3a-rLC"/>
                 <outlet property="nameField" destination="BNB-EM-ecw" id="RNi-9n-m00"/>
+                <outlet property="nameLabel" destination="2fl-Iv-cTE" id="IBs-4Z-YzL"/>
                 <outlet property="serialNumberField" destination="3am-TQ-rf1" id="kfB-gI-LLT"/>
+                <outlet property="serialNumberLabel" destination="UMy-jn-BM0" id="hmx-Kd-W3T"/>
                 <outlet property="toolbar" destination="9V6-PU-zPb" id="ads-xR-Ca0"/>
                 <outlet property="valueField" destination="Hg2-4g-d00" id="cc0-0C-pE2"/>
+                <outlet property="valueLabel" destination="Pbb-2S-jKM" id="0B0-WQ-nJi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,10 +36,6 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fl-Iv-cTE">
                     <rect key="frame" x="32" y="80" width="66" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="AfF-mD-iMV"/>
-                        <constraint firstAttribute="width" constant="66" id="I4f-6V-3fI"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -54,7 +53,6 @@
                     <rect key="frame" x="32" y="115" width="66" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="66" id="4bP-of-GaI"/>
                         <constraint firstAttribute="width" secondItem="UMy-jn-BM0" secondAttribute="height" multiplier="22:7" id="xvw-tG-4v7"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -74,7 +72,6 @@
                     <rect key="frame" x="32" y="148" width="66" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="66" id="6oy-6E-1Ir"/>
                         <constraint firstAttribute="width" secondItem="Pbb-2S-jKM" secondAttribute="height" multiplier="22:7" id="qlf-Jm-9bw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -106,6 +103,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="UMy-jn-BM0" firstAttribute="leading" secondItem="2fl-Iv-cTE" secondAttribute="leading" id="1dS-LL-VAB"/>
+                <constraint firstItem="UMy-jn-BM0" firstAttribute="width" secondItem="Pbb-2S-jKM" secondAttribute="width" id="2In-o6-vFq"/>
                 <constraint firstItem="BNB-EM-ecw" firstAttribute="leading" secondItem="2fl-Iv-cTE" secondAttribute="trailing" constant="8" id="2mP-sm-mhw"/>
                 <constraint firstItem="3am-TQ-rf1" firstAttribute="baseline" secondItem="UMy-jn-BM0" secondAttribute="baseline" constant="-1" id="3RM-7l-Np7"/>
                 <constraint firstAttribute="trailing" secondItem="9V6-PU-zPb" secondAttribute="trailing" id="GZI-Fh-vQj"/>
@@ -113,6 +111,7 @@
                 <constraint firstItem="UMy-jn-BM0" firstAttribute="top" secondItem="2fl-Iv-cTE" secondAttribute="bottom" constant="14" id="S0F-SZ-aK3"/>
                 <constraint firstItem="2fl-Iv-cTE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="UzJ-88-XIN"/>
                 <constraint firstAttribute="bottom" secondItem="9V6-PU-zPb" secondAttribute="bottom" id="Ynl-f5-wJv"/>
+                <constraint firstItem="UMy-jn-BM0" firstAttribute="width" secondItem="2fl-Iv-cTE" secondAttribute="width" id="Zlf-ld-P1R"/>
                 <constraint firstAttribute="trailing" secondItem="BNB-EM-ecw" secondAttribute="trailing" constant="20" id="bo8-jp-bL2"/>
                 <constraint firstItem="Hg2-4g-d00" firstAttribute="centerY" secondItem="Pbb-2S-jKM" secondAttribute="centerY" constant="0.5" id="cm0-t0-age"/>
                 <constraint firstItem="BNB-EM-ecw" firstAttribute="baseline" secondItem="2fl-Iv-cTE" secondAttribute="baseline" id="d8X-mK-i9f"/>
