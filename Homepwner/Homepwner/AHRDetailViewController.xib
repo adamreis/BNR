@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AHRDetailViewController">
             <connections>
+                <outlet property="assetTypeButton" destination="PWG-aC-7Ap" id="5sM-pa-0TA"/>
                 <outlet property="cameraButton" destination="lBn-Hc-x8h" id="wgq-zg-DPm"/>
                 <outlet property="dateLabel" destination="BOw-fW-a8H" id="NsE-3a-rLC"/>
                 <outlet property="nameField" destination="BNB-EM-ecw" id="RNi-9n-m00"/>
@@ -95,6 +96,11 @@
                         <barButtonItem systemItem="camera" id="lBn-Hc-x8h">
                             <connections>
                                 <action selector="takePicture:" destination="-1" id="QmU-6o-fgj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Item" id="PWG-aC-7Ap">
+                            <connections>
+                                <action selector="showAssetTypePicker:" destination="-1" id="w6O-e1-nXk"/>
                             </connections>
                         </barButtonItem>
                     </items>

@@ -7,9 +7,10 @@
 //
 
 #import "AHRDetailViewController.h"
-#import "BNRItem.h"
+#import "AHRItem.h"
 #import "AHRImageStore.h"
 #import "AHRItemStore.h"
+#import "AHRAssetTypeViewController.h"
 
 @interface AHRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
@@ -70,7 +72,7 @@
     UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
     [self prepareViewsForOrientation:io];
     
-    BNRItem *item = self.item;
+    AHRItem *item = self.item;
     
     self.nameField.text = item.itemName;
     self.serialNumberField.text = item.serialNumber;
@@ -87,6 +89,13 @@
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
     
     self.imageView.image = [[AHRImageStore sharedStore] imageForKey:self.item.itemKey];
+    
+    NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
+    if (!typeLabel) {
+        typeLabel = @"None";
+    }
+    
+    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
     
     [self updateFonts];
 }
@@ -117,7 +126,7 @@
                                                                              options:0
                                                                              metrics:nil
                                                                                views:nameMap];
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[dateLabel]-[imageView]-[toolbar]"
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[dateLabel]-[imageView]-4-[toolbar]"
                                                                            options:0
                                                                            metrics:nil
                                                                              views:nameMap];
@@ -157,7 +166,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setItem:(BNRItem *)item
+- (void)setItem:(AHRItem *)item
 {
     _item = item;
     self.navigationItem.title = _item.itemName;
@@ -254,7 +263,7 @@
     
     [self.view endEditing:YES];
     
-    BNRItem* item = self.item;
+    AHRItem* item = self.item;
     item.itemName = self.nameField.text;
     item.serialNumber = self.serialNumberField.text;
     item.valueInDollars = [self.valueField.text intValue];
@@ -264,6 +273,19 @@
 {
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter removeObserver:self];
+}
+
+- (IBAction)showAssetTypePicker:(id)sender {
+    [self.view endEditing:YES];
+    
+    AHRAssetTypeViewController *avc = [[AHRAssetTypeViewController alloc] init];
+    avc.item = self.item;
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        [self.navigationController pushViewController:avc animated:YES];
+    } else {
+        [self.navigationController pushViewController:avc animated:YES];
+    }
 }
 
 @end

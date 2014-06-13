@@ -8,17 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@class BNRItem;
+@class AHRItem;
 
 @interface AHRItemStore : NSObject
 + (instancetype)sharedStore;
 
 @property (nonatomic, readonly) NSArray *allItems;
 
-- (BNRItem *)createItem;
-- (void)removeItem:(BNRItem *)item;
+- (AHRItem *)createItem;
+- (void)removeItem:(AHRItem *)item;
 - (void)moveItemAtIndex:(NSUInteger)fromIndex
                 toIndex:(NSUInteger)toIndex;
 - (BOOL)saveChanges;
+- (NSArray *)allAssetTypes;
+- (void)addAssetType:(NSString *)newType;
 
 @end

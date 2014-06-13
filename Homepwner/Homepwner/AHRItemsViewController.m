@@ -8,7 +8,7 @@
 
 #import "AHRItemsViewController.h"
 #import "AHRItemStore.h"
-#import "BNRItem.h"
+#import "AHRItem.h"
 #import "AHRDetailViewController.h"
 #import "AHRItemCell.h"
 #import "AHRImageStore.h"
@@ -97,7 +97,7 @@
     
     AHRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AHRItemCell" forIndexPath:indexPath];
     
-    BNRItem *item = items[indexPath.row];
+    AHRItem *item = items[indexPath.row];
 
     cell.nameLabel.text = item.itemName;
     cell.serialNumberLabel.text = item.serialNumber;
@@ -146,7 +146,7 @@
 }
 
 - (IBAction)addNewItem:(id)sender {
-    BNRItem *newItem = [[AHRItemStore sharedStore] createItem];
+    AHRItem *newItem = [[AHRItemStore sharedStore] createItem];
     
     AHRDetailViewController *detailViewController = [[AHRDetailViewController alloc] initForNewItem:YES];
     
@@ -169,7 +169,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSArray *items = [[AHRItemStore sharedStore] allItems];
-        BNRItem *item = items[indexPath.row];
+        AHRItem *item = items[indexPath.row];
         [[AHRItemStore sharedStore] removeItem:item];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -192,7 +192,7 @@
     
     AHRDetailViewController *detailVC = [[AHRDetailViewController alloc] initForNewItem:NO];
     
-    BNRItem *selectedItem = items[indexPath.row];
+    AHRItem *selectedItem = items[indexPath.row];
     
     detailVC.item = selectedItem;
     

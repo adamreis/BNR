@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class BNRItem;
+@class AHRItem;
 
 @interface AHRDetailViewController : UIViewController
 
 - (instancetype)initForNewItem:(BOOL)isNew;
 
-@property (strong, nonatomic) BNRItem *item;
+@property (strong, nonatomic) AHRItem *item;
 @property (nonatomic, copy) void (^dismissBlock)(void);
 
 @end
