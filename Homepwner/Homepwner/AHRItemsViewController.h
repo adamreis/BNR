@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AHRItemsViewController : UITableViewController
+@interface AHRItemsViewController : UITableViewController <UIViewControllerRestoration>
 
 @end

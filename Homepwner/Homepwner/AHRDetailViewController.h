@@ -10,7 +10,7 @@
 
 @class AHRItem;
 
-@interface AHRDetailViewController : UIViewController
+@interface AHRDetailViewController : UIViewController <UIViewControllerRestoration>
 
 - (instancetype)initForNewItem:(BOOL)isNew;
 
