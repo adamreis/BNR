@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		ED3C10BB19395FF700121EF7 /* AHRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3C10B919395FF700121EF7 /* AHRDetailViewController.m */; };
-		ED3C10BC19395FF700121EF7 /* AHRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */; };
 		ED3C10BF19396D8E00121EF7 /* AHRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3C10BE19396D8E00121EF7 /* AHRImageStore.m */; };
+		ED4891D4193FCB6800745781 /* AHRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4891D6193FCB6800745781 /* AHRDetailViewController.xib */; };
 		ED5D7B5A193F80EF00FEDCBB /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED5D7B58193F80EF00FEDCBB /* Homepwner.xcdatamodeld */; };
 		ED5D7B5D193F81A500FEDCBB /* AHRImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5D7B5C193F81A500FEDCBB /* AHRImageTransformer.m */; };
 		ED5D7B60193F85F500FEDCBB /* AHRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5D7B5F193F85F500FEDCBB /* AHRItem.m */; };
 		ED5D7B63193F91F500FEDCBB /* AHRAssetTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED5D7B62193F91F500FEDCBB /* AHRAssetTypeViewController.m */; };
+		ED646293193FD20C000263B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED646295193FD20C000263B2 /* Localizable.strings */; };
 		ED7B75E3193933DA00C9EE4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7B75E2193933DA00C9EE4A /* Foundation.framework */; };
 		ED7B75E5193933DA00C9EE4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7B75E4193933DA00C9EE4A /* CoreGraphics.framework */; };
 		ED7B75E7193933DA00C9EE4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7B75E6193933DA00C9EE4A /* UIKit.framework */; };
@@ -46,9 +47,10 @@
 /* Begin PBXFileReference section */
 		ED3C10B819395FF700121EF7 /* AHRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRDetailViewController.h; sourceTree = "<group>"; };
 		ED3C10B919395FF700121EF7 /* AHRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRDetailViewController.m; sourceTree = "<group>"; };
-		ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AHRDetailViewController.xib; sourceTree = "<group>"; };
 		ED3C10BD19396D8E00121EF7 /* AHRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRImageStore.h; sourceTree = "<group>"; };
 		ED3C10BE19396D8E00121EF7 /* AHRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRImageStore.m; sourceTree = "<group>"; };
+		ED4891D7193FCBBF00745781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AHRDetailViewController.xib; sourceTree = "<group>"; };
+		ED4891D8193FCC0E00745781 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AHRDetailViewController.strings; sourceTree = "<group>"; };
 		ED5D7B59193F80EF00FEDCBB /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
 		ED5D7B5B193F81A500FEDCBB /* AHRImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRImageTransformer.h; sourceTree = "<group>"; };
 		ED5D7B5C193F81A500FEDCBB /* AHRImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRImageTransformer.m; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		ED5D7B5F193F85F500FEDCBB /* AHRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRItem.m; sourceTree = "<group>"; };
 		ED5D7B61193F91F500FEDCBB /* AHRAssetTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHRAssetTypeViewController.h; sourceTree = "<group>"; };
 		ED5D7B62193F91F500FEDCBB /* AHRAssetTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHRAssetTypeViewController.m; sourceTree = "<group>"; };
+		ED646294193FD20C000263B2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ED7B75DF193933DA00C9EE4A /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7B75E2193933DA00C9EE4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ED7B75E4193933DA00C9EE4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,7 @@
 		ED7B75E8193933DA00C9EE4A /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				ED646295193FD20C000263B2 /* Localizable.strings */,
 				ED7B75F1193933DA00C9EE4A /* AHRAppDelegate.h */,
 				ED7B75F2193933DA00C9EE4A /* AHRAppDelegate.m */,
 				ED5D7B5E193F85F500FEDCBB /* AHRItem.h */,
@@ -152,7 +156,7 @@
 				ED3C10BE19396D8E00121EF7 /* AHRImageStore.m */,
 				ED3C10B819395FF700121EF7 /* AHRDetailViewController.h */,
 				ED3C10B919395FF700121EF7 /* AHRDetailViewController.m */,
-				ED3C10BA19395FF700121EF7 /* AHRDetailViewController.xib */,
+				ED4891D6193FCB6800745781 /* AHRDetailViewController.xib */,
 				EDB4EAC8193E7E020008256E /* AHRItemCell.h */,
 				EDB4EAC9193E7E020008256E /* AHRItemCell.m */,
 				EDB4EACB193E7E390008256E /* AHRItemCell.xib */,
@@ -257,6 +261,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = ED7B75D6193933DA00C9EE4A;
 			productRefGroup = ED7B75E0193933DA00C9EE4A /* Products */;
@@ -274,8 +279,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED646293193FD20C000263B2 /* Localizable.strings in Resources */,
 				ED7B75ED193933DA00C9EE4A /* InfoPlist.strings in Resources */,
-				ED3C10BC19395FF700121EF7 /* AHRDetailViewController.xib in Resources */,
+				ED4891D4193FCB6800745781 /* AHRDetailViewController.xib in Resources */,
 				EDB4EACC193E7E390008256E /* AHRItemCell.xib in Resources */,
 				ED7B75F5193933DA00C9EE4A /* Images.xcassets in Resources */,
 			);
@@ -330,6 +336,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		ED4891D6193FCB6800745781 /* AHRDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED4891D7193FCBBF00745781 /* Base */,
+				ED4891D8193FCC0E00745781 /* es */,
+			);
+			name = AHRDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+		ED646295193FD20C000263B2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED646294193FD20C000263B2 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		ED7B75EB193933DA00C9EE4A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

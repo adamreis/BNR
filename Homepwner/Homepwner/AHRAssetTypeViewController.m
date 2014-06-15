@@ -20,6 +20,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+        self.navigationItem.title = NSLocalizedString(@"Asset type", @"AHRAssetTypeViewController title");
+        
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                    target:self
                                                                                    action:@selector(addNewItem:)];
